@@ -1,33 +1,180 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  background-color: #fafafa;
+  line-height: 24px;
+  font-family: 'Poppins';
+}
+
+button {
+  border: transparent;
+  outline: none;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+label {
+  display: inline;
+}
+
+ul {
+  list-style: none;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.container {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 50%;
+  padding: 50px 20px;
+}
+
+.container .header {
+  position: relative;
+  font-size: 34px;
+  color: black;
+  display: table;
+  float: left;
+}
+
+.container .header-container {
+  position: relative;
+  margin-bottom: 72px;
+}
+
+.container .header-container .add-task {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  font-weight: 500;
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  background-color: black;
+  float: right;
+  display: block;
+  padding: 12px;
+  border-radius: 100%;
+  cursor: pointer;
+  margin-top: -12px;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-list {
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-list .todo {
+  position: relative;
+  border-radius: 5px;
+  padding: 24px;
+  background-color: white;
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.03);
+  width: 70%;
+  margin-bottom: 38px;
+}
+
+.todo-list .todo .tag {
+  position: relative;
+  background-color: #f5587b;
+  color: white;
+  font-variant: small-caps;
+  font-weight: 600;
+  display: table;
+  padding: 4px 12px;
+  border-radius: 3px;
+  margin-top: -40px;
+  border: transparent;
+  font-family: 'Poppins';
+  font-size: 16px;
+}
+
+.todo-list .todo .tag:focus {
+  outline: none;
+}
+
+.todo-list .todo .controls {
+  position: relative;
+}
+
+.todo-list .todo .controls .control {
+  float: right;
+  border: 2px solid #666;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.todo-list .todo .controls .control:first-of-type {
+  margin-left: 16px;
+}
+
+.todo-list .todo .controls .delete {
+  transform: rotate(45deg);
+}
+
+.todo-list .todo .task {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.todo-list .todo .task input {
+  margin-right: 12px;
+}
+
+.todo-list .todo .add-task {
+  position: relative;
+  margin-top: 38px;
+}
+
+.todo-list .todo .add-task .task-input {
+  position: relative;
+  font-family: 'Poppins';
+  padding: 12px;
+  font-size: 14px;
+  outline: none;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  float: left;
+}
+
+.todo-list .todo .add-task .buttons {
+  position: relative;
+  float: left;
+  margin-left: 24px;
+}
+
+.todo-list .todo .add-task .buttons .button {
+  position: relative;
+  float: left;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  font-family: 'Poppins';
+  font-weight: 500;
+  background-color: #666;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.todo-list .todo .add-task .buttons .button:first-of-type {
+  margin-right: 16px;
 }
