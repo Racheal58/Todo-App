@@ -54,22 +54,22 @@ class Todo extends Component {
     });
 
     return (
-      <li class="todo">
-        <input class="tag" defaultValue={data.category} />
-        <div class="controls clearfix">
-          <span class="control delete" onClick={this.removeTodo}>
+      <li className="todo">
+        <input className="tag" defaultValue={data.category} />
+        <div className="controls clearfix">
+          <span className="control delete" onClick={this.removeTodo}>
             +
           </span>
-          <span class="control add" onClick={this.showForm}>
+          <span className="control add" onClick={this.showForm}>
             +
           </span>
         </div>
         {taskList}
         {this.state.formShow && (
-          <form class="add-task clearfix" onSubmit={this.submitform}>
+          <form className="add-task clearfix" onSubmit={this.submitform}>
             <input
               type="text"
-              class="task-input"
+              className="task-input"
               placeholder="Write your task"
               name="task"
               value={this.task}
@@ -79,14 +79,14 @@ class Todo extends Component {
               <button
                 type="submit"
                 value="submit"
-                class="button"
+                className="button"
                 style={{ backgroundColor: '#5FAD56' }}
               >
                 Add
               </button>
               <button
                 type="button"
-                class="button"
+                className="button"
                 style={{ backgroundColor: '#B4436C' }}
                 onClick={this.hideForm}
               >
