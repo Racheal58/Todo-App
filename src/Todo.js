@@ -18,6 +18,9 @@ class Todo extends Component {
 
     const task = { text: e.target.elements.task.value, done: false };
     this.props.addItem(this.props.todoId, task);
+
+    //trying to clear the form state but it isn't working out
+    // this.setState({ task: '' });
   };
 
   showForm = () => {
@@ -41,14 +44,14 @@ class Todo extends Component {
     const { data } = this.props;
     let taskList = data.tasks.map((data, index) => {
       return (
-        <div class="task clearfix" key={index}>
+        <div className="task clearfix" key={index}>
           <input
             type="checkbox"
             id={index}
             onChange={this.checkedTodo}
             checked={data.done}
           />
-          <label for={index}>{data.text}</label>
+          <label htmlFor={index}>{data.text}</label>
         </div>
       );
     });
@@ -75,7 +78,7 @@ class Todo extends Component {
               value={this.task}
               onChange={this.handleChange}
             />
-            <div class="buttons clearfix">
+            <div className="buttons clearfix">
               <button
                 type="submit"
                 value="submit"
