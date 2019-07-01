@@ -9,8 +9,9 @@ class App extends Component {
     todos: []
   };
 
-  componentWillMount = () => {
-    const todos = JSON.parse(localStorage.getItem('todos'));
+  componentDidMount = () => {
+    const todos = this.state.todos;
+    JSON.parse(localStorage.getItem('todos'));
     this.setState({
       todos
     });
