@@ -6,34 +6,35 @@ import Todo from './Todo';
 class App extends Component {
   state = {
     category: '',
-    todos: [
-      // {
-      //   category: 'to do',
-      //   tasks: [{ text: 'get sliced bread', done: true }]
-      // },
-      // {
-      //   category: 'to do',
-      //   tasks: [{ text: 'get groceries', done: false }]
-      // }
-    ]
+    todos: []
+  };
+
+  componentWillMount = () => {
+    const todos = JSON.parse(localStorage.getItem('todos'));
+    this.setState({
+      todos
+    });
   };
 
   createTodo = () => {
     const todos = this.state.todos;
     todos.push({ category: 'rename category', tasks: [] });
     this.setState({ todos: todos });
+    localStorage.setItem('todos', JSON.stringify(todos));
   };
 
   addItem = (id, task) => {
     const todos = this.state.todos;
     todos[id].tasks.push(task);
     this.setState({ todos: todos });
+    localStorage.setItem('todos', JSON.stringify(todos));
   };
 
   removeItem = id => {
     const todos = this.state.todos;
     todos.splice(id, 1);
     this.setState({ todos: todos });
+    localStorage.setItem('todos', JSON.stringify(todos));
   };
 
   checkedItem = (todoId, taskId) => {
@@ -41,6 +42,7 @@ class App extends Component {
     let taskDoneState = todos[todoId].tasks[taskId].done;
     todos[todoId].tasks[taskId].done = !taskDoneState;
     this.setState({ todos: todos });
+    localStorage.setItem('todos', JSON.stringify(todos));
   };
 
   render() {
@@ -58,14 +60,14 @@ class App extends Component {
     });
 
     return (
-      <div class="container">
-        <div class="header-container clearfix">
-          <h3 class="header">Todo</h3>
-          <span class="add-task" onClick={this.createTodo}>
+      <div className="container">
+        <div className="header-container clearfix">
+          <h3 className="header">Todo</h3>
+          <span className="add-task" onClick={this.createTodo}>
             +
           </span>
         </div>
-        <ul class="todo-list">{todoList}</ul>
+        <ul className="todo-list">{todoList}</ul>
       </div>
     );
   }
