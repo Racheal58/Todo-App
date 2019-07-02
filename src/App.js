@@ -10,11 +10,14 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    const todos = this.state.todos;
-    JSON.parse(localStorage.getItem('todos'));
-    this.setState({
-      todos
-    });
+    if (localStorage.getItem('todos')) {
+      const todos = JSON.parse(localStorage.getItem('todos'));
+      this.setState({
+        todos
+      });
+    } else {
+      localStorage.setItem('todos', JSON.stringify([]));
+    }
   };
 
   createTodo = () => {
